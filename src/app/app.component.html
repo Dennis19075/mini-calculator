@@ -1,17 +1,52 @@
-<h1>{{title}}</h1>
 
-<form action="">
-  Number 1: <input type="text" [(ngModel)]="numberOne" name="numberOne">
-  <br>
-  <br>
-  Number 2: <input type="text" [(ngModel)]="numberTwo" name="numberTwo">
-  <br>
-  <br>
-  <input type="submit" value="Add" (click)="add()">
-  <input type="submit" value="Substract" (click)="substraction()">
-  <input type="submit" value="Multiply" (click)="multiply()">
-  <input type="submit" value="Divide" (click)="divide()">
-  <br>
-  <br>
-  <p>Result: {{result}}</p>
-</form>
+
+<div class="container">
+ <br>
+  <div class="row">
+    <div style="text-align: center;" class="col-md-12">
+      <h1>{{title}}</h1>
+      <form action="">
+          <input style="text-align: right;" type="text" [(ngModel)]="oper" name="oper">
+        
+        <!-- Number 2: <input type="text" [(ngModel)]="numberTwo" name="numberTwo"> -->
+        <br>
+        <br>
+        <input class="btn btn-outline-primary" type="submit" value="1" (click)="setOne()"> <!--(click)="setOne()"-->
+        <input class="btn btn-outline-primary" type="submit" value="2" (click)="setTwo()">
+        <input class="btn btn-outline-primary" type="submit" value="3" (click)="setThree()">
+        <input class="btn btn-outline-primary" type="submit" value="+" (click)="add()">
+        <br>
+        <input class="btn btn-outline-primary" type="submit" value="4" (click)="setFour()">
+        <input class="btn btn-outline-primary" type="submit" value="5" (click)="setFive()">
+        <input class="btn btn-outline-primary" type="submit" value="6" (click)="setSix()">
+        <input class="btn btn-outline-primary" type="submit" value="-" (click)="substract()">
+        <br>
+        <input class="btn btn-outline-primary" type="submit" value="7" (click)="setSeven()">
+        <input class="btn btn-outline-primary" type="submit" value="8" (click)="setEight()">
+        <input class="btn btn-outline-primary" type="submit" value="9" (click)="setNine()">
+        <input class="btn btn-outline-primary" type="submit" value="*" (click)="multiply()">
+        <br>
+        <input class="btn btn-outline-primary" type="submit" value="C" (click)="clean()">
+        <input class="btn btn-outline-primary" type="submit" value="0" (click)="setZero()">
+        <input class="btn btn-outline-primary" type="submit" value=" / " (click)="divide()">
+        <input class="btn btn-outline-primary" type="submit" value="=" (click)="equals()">
+      
+        <!-- <input type="submit" value="Add" (click)="add()">
+        <input type="submit" value="Substract" (click)="substraction()">
+        <input type="submit" value="Multiply" (click)="multiply()">
+        <input type="submit" value="Divide" (click)="divide()"> -->
+        <br>
+        <br>
+        <h3>Result: {{result}}</h3>
+        <br>
+        <h4>History</h4>
+        <ul>
+          <li *ngFor="let hist of history">
+            {{hist}}
+          </li>
+        </ul>
+      </form>
+    </div>
+  </div>
+</div>
+
